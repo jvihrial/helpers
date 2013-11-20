@@ -1,0 +1,8 @@
+#!/bin/bash
+
+DEVICE_IP=192.168.2.15
+DEVICE_USER=nemo
+
+scp ~/.ssh/id_rsa.pub $DEVICE_USER@$DEVICE_IP:
+ssh $DEVICE_USER@$DEVICE_IP "mkdir -p ~/.ssh ; cp id_rsa.pub ~/.ssh/authorized_keys ; chmod 700 ~/.ssh"
+
